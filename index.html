@@ -13,10 +13,11 @@
 
 <div id="welcome-screen">
   <div class="welcome-content">
-    <div class="welcome-line"></div>
+    <div class="welcome-logo">[L]</div>
     <h1 class="welcome-title">Bienvenido</h1>
     <p class="welcome-sub">Welcome</p>
     <div class="welcome-line"></div>
+    <p class="welcome-tagline">Excelencia en bienes raíces</p>
   </div>
 </div>
 
@@ -150,8 +151,14 @@ window.addEventListener('load', () => {
   const welcome = document.getElementById('welcome-screen');
   setTimeout(() => {
     welcome.classList.add('hide');
-    setTimeout(() => welcome.remove(), 900);
-  }, 2200);
+    setTimeout(() => welcome.remove(), 1100);
+  }, 2600);
+});
+
+// Header shrink on scroll
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('header');
+  if (header) header.classList.toggle('scrolled', window.scrollY > 40);
 });
 renderFeatured();
 function buscar() {

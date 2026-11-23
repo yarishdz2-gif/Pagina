@@ -105,3 +105,10 @@ function mostrarToast(msg) {
   setTimeout(() => t.classList.remove('show'), 4000);
 }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') cerrarModal(); });
+
+
+// Header shrink on scroll
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('header');
+  if (header) header.classList.toggle('scrolled', window.scrollY > 40);
+});
